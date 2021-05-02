@@ -1,0 +1,13 @@
+.info {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    transition: all 0.4s;
+}
+span {
+    position: absolute;
+    top: 50vh;
+    left: 15%;
+}
