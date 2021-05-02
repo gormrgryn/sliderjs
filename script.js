@@ -14,7 +14,7 @@ document.querySelector('.arrowleft').addEventListener('click', () => {
     if (!proc) {
         proc = true
         i = i.prev ? i.prev : list.tail
-        document.querySelector('.info').style.background = `url('${i.element}')`
+        document.querySelector('.info').style.backgroundImage = `url('${i.element}')`
         setTimeout(() => proc = false, 700);
     }
 })
@@ -22,7 +22,7 @@ document.querySelector('.arrowright').addEventListener('click', () => {
     if(!proc) {
         proc = true
         i = i.next ? i.next : list.head
-        document.querySelector('.info').style.background = `url('${i.element}')`
+        document.querySelector('.info').style.backgroundImage = `url('${i.element}')`
         setTimeout(() => proc = false, 700);
     }
 })
@@ -34,9 +34,9 @@ const swipe = () => {
         } else {
             i = list.head
         }
-        document.querySelector('.info').style.background = `url('${i.element}')`
-        setTimeout(swipe, 5000);
+        document.querySelector('.info').style.backgroundImage = `url('${i.element}')`
     }
+    setTimeout(swipe, 5000);
 }
 
 swipe()
