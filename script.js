@@ -8,11 +8,31 @@ imgs.forEach(i => {
     list.add(i)
 })
 let i = list.head
-setInterval(() => {
-    if(i.next) {
-        i = i.next
-    } else {
-        i = list.head
-    }
+let proc = false
+
+document.querySelector('.arrowleft').addEventListener('click', () => {
+    proc = true
+    i = i.prev ? i.prev : list.tail
     document.querySelector('.info').style.background = `url('${i.element}')`
-}, 2000)
+    proc = false
+})
+document.querySelector('.arrowright').addEventListener('click', () => {
+    proc = true
+    i = i.next ? i.next : list.head
+    document.querySelector('.info').style.background = `url('${i.element}')`
+    proc = false
+})
+
+const swipe = () => {
+    if (!proc) {
+        if (i.next) {
+            i = i.next
+        } else {
+            i = list.head
+        }
+        document.querySelector('.info').style.background = `url('${i.element}')`
+        setTimeout(swipe, 5000);
+    }
+}
+
+swipe()

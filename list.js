@@ -2,6 +2,7 @@ class Node {
     constructor (element) {
         this.element = element
         this.next = null
+        this.prev = null
     }
 }
 
@@ -9,6 +10,7 @@ class LinkedList {
     constructor () {
         this.length = 0
         this.head = null
+        this.tail = null
     }
     add (element) {
         let node = new Node(element)
@@ -20,6 +22,8 @@ class LinkedList {
                 currentNode = currentNode.next
             }
             currentNode.next = node
+            node.prev = currentNode
+            this.tail = node
         }
         this.length++
     }
