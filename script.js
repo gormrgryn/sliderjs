@@ -11,16 +11,20 @@ let i = list.head
 let proc = false
 
 document.querySelector('.arrowleft').addEventListener('click', () => {
-    proc = true
-    i = i.prev ? i.prev : list.tail
-    document.querySelector('.info').style.background = `url('${i.element}')`
-    proc = false
+    if (!proc) {
+        proc = true
+        i = i.prev ? i.prev : list.tail
+        document.querySelector('.info').style.background = `url('${i.element}')`
+        setTimeout(() => proc = false, 700);
+    }
 })
 document.querySelector('.arrowright').addEventListener('click', () => {
-    proc = true
-    i = i.next ? i.next : list.head
-    document.querySelector('.info').style.background = `url('${i.element}')`
-    proc = false
+    if(!proc) {
+        proc = true
+        i = i.next ? i.next : list.head
+        document.querySelector('.info').style.background = `url('${i.element}')`
+        setTimeout(() => proc = false, 700);
+    }
 })
 
 const swipe = () => {
