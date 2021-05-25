@@ -29,11 +29,7 @@ document.querySelector('.arrowright').addEventListener('click', () => {
 
 const swipe = () => {
     if (!proc) {
-        if (i.next) {
-            i = i.next
-        } else {
-            i = list.head
-        }
+        i = i.next ? i.next : list.head
         document.querySelector('.info').style.backgroundImage = `url('${i.element}')`
     }
     setTimeout(swipe, 5000);
