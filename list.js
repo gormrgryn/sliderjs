@@ -1,6 +1,7 @@
 class Node {
-    constructor (element) {
+    constructor (element, dot) {
         this.element = element
+        this.dot = dot
         this.next = null
         this.prev = null
     }
@@ -12,8 +13,8 @@ class LinkedList {
         this.head = null
         this.tail = null
     }
-    add (element) {
-        let node = new Node(element)
+    add (element, dot) {
+        let node = new Node(element, dot)
         if(this.head === null) {
             this.head = node
         } else {
