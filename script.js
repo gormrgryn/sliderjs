@@ -21,31 +21,27 @@ const dotChange = (dot) => {
     })
 }
 
-document.querySelector('.arrowleft').addEventListener('click', () => {
-    if (!proc) {
-        proc = true
-        i = i.prev ? i.prev : list.tail
-        document.querySelector('.info').style.backgroundImage = `url('${i.element}')`
-        dotChange(i.dot)
-        setTimeout(() => proc = false, 700);
+const slide = (dir) => {
+    if (proc) return
+    let prop = dir == 'right' ? {
+        val: 'next',
+        extra: 'head'
+    } : {
+        val: 'prev',
+        extra: 'tail'
     }
-})
-document.querySelector('.arrowright').addEventListener('click', () => {
-    if(!proc) {
-        proc = true
-        i = i.next ? i.next : list.head
-        document.querySelector('.info').style.backgroundImage = `url('${i.element}')`
-        dotChange(i.dot)
-        setTimeout(() => proc = false, 700);
-    }
-})
+    proc = true
+    i = i[prop.val] ? i[prop.val] : list[prop.extra]
+    document.querySelector('.info').style.backgroundImage = `url('${i.element}')`
+    dotChange(i.dot)
+    setTimeout(() => proc = false, 700);
+}
+
+document.querySelector('.arrowleft').addEventListener('click', () => slide('left'))
+document.querySelector('.arrowright').addEventListener('click', () => slide('right'))
 
 const swipe = () => {
-    if (!proc) {
-        i = i.next ? i.next : list.head
-        document.querySelector('.info').style.backgroundImage = `url('${i.element}')`
-        dotChange(i.dot)
-    }
+    slide('right')
     setTimeout(swipe, 5000);
 }
 
