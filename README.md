@@ -77,4 +77,4 @@ Image Slider with indicator-dots
 
 Your Name - [@_gormargaryan](https://twitter.com/_gormargaryan) - margaryan.gor.55@gmail.com
 
-Project Link: [https://github.com/gormrgryn/navbar-sliding-indicator-js](https://github.com/gormrgryn/navbar-sliding-indicator-js)
+Project Link: [https://github.com/gormrgryn/sliderjs](https://github.com/gormrgryn/sliderjs)
