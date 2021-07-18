@@ -75,6 +75,6 @@ Image Slider with indicator-dots
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@_gormargaryan](https://twitter.com/_gormargaryan) - margaryan.gor.55@gmail.com
+Twitter - [@_gormargaryan](https://twitter.com/_gormargaryan) - margaryan.gor.55@gmail.com
 
 Project Link: [https://github.com/gormrgryn/sliderjs](https://github.com/gormrgryn/sliderjs)
